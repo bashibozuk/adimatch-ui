@@ -17,7 +17,9 @@ function checkInApp() {
 function copyIndex() {
   const index = 'dist/adimatch-ui/index.html';
   const dest = '../app/templates';
-  copyFile(index, dest);
+  copyFile(index, dest, (content) => {
+    console.log(content)
+  });
 }
 
 function copyAssets() {
@@ -40,7 +42,7 @@ function copyAssets() {
   }
 }
 
-function copyFile(source, destination) {
+function copyFile(source, destination, callback) {
   if (!fs.existsSync(source)) {
     throw new Error(`Invalid source file ${source}`);
   }
@@ -55,7 +57,17 @@ function copyFile(source, destination) {
 
   const destFile = path.join(destination, path.basename(source));
 
-  fs.createReadStream(source).pipe(fs.createWriteStream(destFile));
+  const content = fs.readFileSync(source, 'utf8')
+  if (callback) {
+    callback(content);
+  }
+
+  fs.writeFileSync(destFile, content);
+  /*const stream = fs.createReadStream(source);
+  if (callback) {
+    callback(content);
+  }
+  stream.pipe(fs.createWriteStream(destFile));*/
 }
 
 function deploy() {
