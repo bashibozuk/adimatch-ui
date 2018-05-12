@@ -63,11 +63,6 @@ function copyFile(source, destination, callback) {
   }
 
   fs.writeFileSync(destFile, content);
-  /*const stream = fs.createReadStream(source);
-  if (callback) {
-    callback(content);
-  }
-  stream.pipe(fs.createWriteStream(destFile));*/
 }
 
 function deploy() {

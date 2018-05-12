@@ -7,15 +7,23 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { HistoryComponent } from './history/history.component';
 import { EventsComponent } from './events/events.component';
+import {UserService} from './user.service';
+import {AppGuardService} from './app-guard.service';
+import { SearchFormComponent } from './search-form/search-form.component';
+import { StatsComponent } from './stats/stats.component';
+import {HttpModule} from '@angular/http';
+import {HttpClientModule} from '@angular/common/http';
+import {AdimatchHttpService} from './adimatch-http.service';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 const appRoutes: Routes = [{
-  path: '', component: HomeComponent
+  path: '', component: HomeComponent, canActivate: [AppGuardService]
 }, {
   path: 'login', component: LoginComponent
 }, {
-  path: 'events', component: EventsComponent
+  path: 'events', component: EventsComponent, canActivate: [AppGuardService]
 }, {
-  path: 'history', component: HistoryComponent
+  path: 'history', component: HistoryComponent, canActivate: [AppGuardService]
 }];
 
 @NgModule({
@@ -24,13 +32,22 @@ const appRoutes: Routes = [{
     HomeComponent,
     LoginComponent,
     HistoryComponent,
-    EventsComponent
+    EventsComponent,
+    SearchFormComponent,
+    StatsComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes, {enableTracing: true}),
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    UserService,
+    AppGuardService,
+    AdimatchHttpService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
