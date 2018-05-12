@@ -15,7 +15,7 @@ function checkInApp() {
 }
 
 function copyIndex() {
-  const index = 'dist/adiwatch-ui/index.html';
+  const index = 'dist/adimatch-ui/index.html';
   const dest = '../app/templates';
   copyFile(index, dest);
 }
@@ -29,7 +29,7 @@ function copyAssets() {
     'vendor.js',
   ];
 
-  const sourceDir = 'dist/adiwatch-ui/';
+  const sourceDir = 'dist/adimatch-ui/';
   const destDir = '../app/static';
 
   if (!fs.existsSync(destDir)) {
