@@ -18,7 +18,7 @@ function copyIndex() {
   const index = 'dist/adimatch-ui/index.html';
   const dest = '../app/templates';
   copyFile(index, dest, (content) => {
-    console.log(content)
+    return content.replace(/src="([^"]+\.js)"/g, 'src="/static/$1"');
   });
 }
 
@@ -57,9 +57,9 @@ function copyFile(source, destination, callback) {
 
   const destFile = path.join(destination, path.basename(source));
 
-  const content = fs.readFileSync(source, 'utf8')
+  let content = fs.readFileSync(source, 'utf8')
   if (callback) {
-    callback(content);
+    content = callback(content);
   }
 
   fs.writeFileSync(destFile, content);
