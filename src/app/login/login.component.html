@@ -2,11 +2,11 @@
   <div class="alert alert-danger" *ngIf="!valid">Invalid email or password</div>
   <div class="form-group">
     <label for="">Username</label>
-    <input type="text" class="form-control" [(ngModel)]="username" name="username">
+    <input type="text" class="form-control" [(ngModel)]="loginModel.username" name="username">
   </div>
   <div class="form-group">
     <label for="">Password</label>
-    <input type="password" class="form-control" [(ngModel)]="password" name="password">
+    <input type="password" class="form-control" [(ngModel)]="loginModel.password" name="password">
   </div>
   <div class="form-group">
     <a class="btn btn-primary btn-block" href="javascript:void(0);" (click)="onLogin()">Login</a>
