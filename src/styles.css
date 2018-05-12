@@ -6,6 +6,10 @@
   /*padding-bottom:80px;*/
 }
 
+a.navbar-brand {
+  background-image: url(assets/img/Adidas_logo.svg);
+}
+
 html {
   height: 100%;
 }
