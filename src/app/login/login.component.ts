@@ -9,7 +9,7 @@ import {UserService} from '../user.service';
 })
 export class LoginComponent implements OnInit {
 
-  public email: string;
+  public username: string;
 
   public password: string;
 
@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
       return;
     }
 
-    this.http.login(this.email, this.password)
+    this.http.login(this.username, this.password)
       .subscribe((response: any) => {
         this.userService.login(response);
       });
@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
 
   private validate(): boolean {
     this.valid = true;
-    if (!this.email) {
+    if (!this.username) {
       this.valid = false;
     }
 

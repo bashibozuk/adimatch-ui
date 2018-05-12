@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 /* header start */
 .header-dark {
-  background:url(/assets/img/mountain_bg.jpg) #444;
+  background:url(assets/img/mountain_bg.jpg) #444;
   background-size:cover;
   /*padding-bottom:80px;*/
 }
@@ -197,7 +197,7 @@ body {
 .animate-area {
   /*width:560px;*/
   /*height:400px;*/
-  background-image:url("/assets/img/mountain_bg.jpg");
+  background-image:url("assets/img/mountain_bg.jpg");
   background-position:0px 0px;
   background-repeat:repeat-x;
   animation:animatedBackground 45s linear infinite;
