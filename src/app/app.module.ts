@@ -15,11 +15,14 @@ import {HttpModule} from '@angular/http';
 import {HttpClientModule} from '@angular/common/http';
 import {AdimatchHttpService} from './adimatch-http.service';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { RegisterComponent } from './register/register.component';
 
 const appRoutes: Routes = [{
   path: '', component: HomeComponent, canActivate: [AppGuardService]
 }, {
   path: 'login', component: LoginComponent
+}, {
+  path: 'register', component: RegisterComponent
 }, {
   path: 'events', component: EventsComponent, canActivate: [AppGuardService]
 }, {
@@ -34,7 +37,8 @@ const appRoutes: Routes = [{
     HistoryComponent,
     EventsComponent,
     SearchFormComponent,
-    StatsComponent
+    StatsComponent,
+    RegisterComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes, {enableTracing: true}),
