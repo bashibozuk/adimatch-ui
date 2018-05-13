@@ -16,7 +16,7 @@ export class NotificationService {
   }
 
   public loadNotifications() {
-    setInterval(() => {
+   /* setInterval(() => {
       this.http.getNotifications()
         .subscribe((notifications: NotificationModel[]) => {
           if (!this.hasNew) {
@@ -25,6 +25,6 @@ export class NotificationService {
           }
           this.notifications = notifications;
         });
-    }, this.INTERVAL);
+    }, this.INTERVAL);*/
   }
 }
