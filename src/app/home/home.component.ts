@@ -21,6 +21,10 @@ export class HomeComponent implements OnInit {
     this.load();
   }
 
+  get user(): UserModel {
+    return this.userService.user;
+  }
+
   get currentMatch(): UserModel | null {
     return this.matches[this.current] ? this.matches[this.current] : null;
   }
@@ -54,5 +58,9 @@ export class HomeComponent implements OnInit {
       .subscribe(() => {
         alert('You made new challenge');
       });
+  }
+
+  onSearch(): void {
+    this.load();
   }
 }

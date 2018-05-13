@@ -1,7 +1,7 @@
 <app-search-form
   (search)="onSearch()"
-  (filterChanged)="onFilterChanged()"
-  [selectedSports]="filter.sports"></app-search-form>
+  (filterChanged)="onFilterChanged($event)"
+  [selectedSports]="user.sports"></app-search-form>
 
 <app-profile [user]="currentMatch"></app-profile>
 <div class="button-holder">

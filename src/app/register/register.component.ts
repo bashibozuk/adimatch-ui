@@ -43,7 +43,7 @@ export class RegisterComponent implements OnInit {
 
   private validate(): boolean {
     const errors = {};
-    if (!this.user.username){
+    if (!this.user.username) {
       errors['username'] = 'Invalid value';
     }
 
