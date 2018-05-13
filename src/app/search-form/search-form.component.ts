@@ -22,6 +22,7 @@ export class SearchFormComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log(this.allSports);
   }
 
   toggleSport($event: MouseEvent, sport: Sport): void {

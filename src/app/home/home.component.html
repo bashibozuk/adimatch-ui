@@ -1,10 +1,13 @@
 <app-search-form
   (search)="onSearch()"
   (filterChanged)="onFilterChanged($event)"
-  [selectedSports]="user.sports"></app-search-form>
+  [selectedSports]="user.sports || []"></app-search-form>
+<ng-container *ngIf="currentMatch">
+  <app-profile [user]="currentMatch"></app-profile>
+  <div class="button-holder">
+    <button class="btn btn-danger swiper left" type="button" (click)="onDecline()">Decline</button>
+    <button class="btn btn-success swiper right" type="button" (click)="onChallenge()">Challenge</button>
+  </div>
+</ng-container>
 
-<app-profile [user]="currentMatch"></app-profile>
-<div class="button-holder">
-  <button class="btn btn-danger swiper left" type="button" (click)="onDecline()">Decline</button>
-  <button class="btn btn-success swiper right" type="button" (click)="onChallenge()">Challenge</button>
-</div>
+

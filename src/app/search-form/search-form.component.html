@@ -9,11 +9,11 @@
 
     </button>
     <div class="dropdown-menu" role="menu">
-      <a class="dropdown-item" role="presentation" href="#" *ngFor="let sport of allSports"
-          (click)="toggleSport($event, sport)">
-          {{sport}}
+      <a class="dropdown-item" role="presentation" *ngFor="let s of allSports"
+          (click)="toggleSport($event, s)">
+          {{s}}
           <input type="checkbox" class="item-check"
-                 [checked]="selectedSports.indexOf(sport) !== -1">
+                 [checked]="selectedSports.indexOf(s) !== -1">
       </a>
      </div>
   </div>

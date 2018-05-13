@@ -26,7 +26,8 @@ export class HomeComponent implements OnInit {
   }
 
   get currentMatch(): UserModel | null {
-    return this.matches[this.current] ? this.matches[this.current] : null;
+    return this.matches && this.matches[this.current] ?
+        this.matches[this.current] : null;
   }
 
   load(): void {
