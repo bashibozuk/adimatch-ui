@@ -39,10 +39,10 @@ export class AdimatchHttpService {
   }
 
   getMatches(filter: MatchFilter): Observable<any> {
-    return this.http.get(
-      `${AdimatchHttpService.PREFIX}/suggestion`, {params: {
+    return this.http.post(
+      `${AdimatchHttpService.PREFIX}/suggestion`, {
          sports: filter.sports
-      }});
+      });
   }
 
   challenge(user: UserModel, sport: Sport) {
