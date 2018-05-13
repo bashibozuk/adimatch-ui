@@ -1,12 +1,10 @@
-<app-search-form></app-search-form>
+<app-search-form
+  (search)="onSearch()"
+  (filterChanged)="onFilterChanged()"
+  [selectedSports]="filter.sports"></app-search-form>
 
-<div class="d-flex flex-row profile-info"><img src="assets/img/Generic_Placeholder_-_Profile.jpg" class="profile-pic">
-  <app-stats></app-stats>
-</div>
-<h4 class="card-title">Adam Smith</h4>
-<h6 class="text-muted card-subtitle mb-2">Sofia, Some Str. 45</h6>
-<p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+<app-profile [user]="currentMatch"></app-profile>
 <div class="button-holder">
-  <button class="btn btn-danger swiper left" type="button">Decline</button>
-  <button class="btn btn-success swiper right" type="button">Challenge</button>
+  <button class="btn btn-danger swiper left" type="button" (click)="onDecline()">Decline</button>
+  <button class="btn btn-success swiper right" type="button" (click)="onChallenge()">Challenge</button>
 </div>

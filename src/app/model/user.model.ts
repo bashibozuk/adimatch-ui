@@ -4,6 +4,8 @@ export type Sport = 'Basketball' | 'Badmington' | 'Football' | 'Tennis' | 'Other
 export const ALL_SPORTS: Sport[] = ['Basketball', 'Badmington', 'Football', 'Tennis', 'Other'];
 
 export class UserModel {
+  public id: number;
+
   public username: string;
 
   public password: string;
