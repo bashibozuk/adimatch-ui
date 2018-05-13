@@ -13,7 +13,7 @@ export class AdimatchHttpService {
 
   private static readonly PREFIX = 'api';
 
-  private readonly MOCK = false;
+  private readonly MOCK = true;
 
   constructor(private http: HttpClient) {
 
@@ -63,5 +63,10 @@ export class AdimatchHttpService {
         defender_id: user.id,
         sport: sport
       });
+  }
+
+  getNotifications() {
+    return this.http.get(
+      `${AdimatchHttpService.PREFIX}/notifications`);
   }
 }

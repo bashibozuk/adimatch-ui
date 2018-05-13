@@ -17,6 +17,8 @@ import {AdimatchHttpService} from './adimatch-http.service';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
+import {NotificationService} from './notification.service';
+import { NotificationsComponent } from './notifications/notifications.component';
 
 const appRoutes: Routes = [{
   path: '', component: HomeComponent, canActivate: [AppGuardService]
@@ -28,6 +30,8 @@ const appRoutes: Routes = [{
   path: 'events', component: EventsComponent, canActivate: [AppGuardService]
 }, {
   path: 'history', component: HistoryComponent, canActivate: [AppGuardService]
+}, {
+  path: 'notifications', component: NotificationsComponent, canActivate: [AppGuardService]
 }];
 
 @NgModule({
@@ -40,7 +44,8 @@ const appRoutes: Routes = [{
     SearchFormComponent,
     StatsComponent,
     RegisterComponent,
-    ProfileComponent
+    ProfileComponent,
+    NotificationsComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes, {enableTracing: true}),
@@ -52,7 +57,8 @@ const appRoutes: Routes = [{
   providers: [
     UserService,
     AppGuardService,
-    AdimatchHttpService
+    AdimatchHttpService,
+    NotificationService
   ],
   bootstrap: [AppComponent]
 })

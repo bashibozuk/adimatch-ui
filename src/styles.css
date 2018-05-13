@@ -465,3 +465,7 @@ iframe {
 }
 
 /* End registration form*/
+
+.btn-light.active {
+  background-color: red !important;
+}

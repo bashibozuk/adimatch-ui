@@ -25,7 +25,12 @@
           </ul>
           <form class="form-inline mr-auto" target="_self">
             <div class="form-group"><label for="search-field"><i class="fa fa-search"></i></label><input class="form-control search-field" type="search" name="search" id="search-field"></div>
-          </form><span class="navbar-text"></span><a class="btn btn-light profile-button notifications" role="button" href="#" style="font-size:25px;">!</a><a class="btn btn-light profile-button" role="button" href="#"></a></div>
+          </form><span class="navbar-text"></span>
+          <a class="btn btn-light profile-button notifications" role="button" href="#" style="font-size:25px;"
+            [class.active]="hasNew"
+             routerLink="/notifications"
+          >!</a>
+          <a class="btn btn-light profile-button" role="button" href="#"></a></div>
       </div>
     </nav>
     <div class="container hero">
