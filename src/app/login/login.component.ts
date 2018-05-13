@@ -28,6 +28,10 @@ export class LoginComponent implements OnInit {
 
     this.http.login(this.loginModel)
       .subscribe((response: any) => {
+        if ('error' in response) {
+          this.valid = false;
+          return;
+        }
         this.userService.login(response);
         this.router.navigate(['']);
       });
