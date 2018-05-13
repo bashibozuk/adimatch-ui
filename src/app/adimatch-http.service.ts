@@ -13,7 +13,7 @@ export class AdimatchHttpService {
 
   private static readonly PREFIX = 'api';
 
-  private readonly MOCK = true;
+  private readonly MOCK = false;
 
   constructor(private http: HttpClient) {
 
